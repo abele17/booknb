@@ -22,7 +22,6 @@ class BooksController < ApplicationController
 
     @markers = @users.geocoded.map do |user|
       {
-
         lat: user.latitude,
         lng: user.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {user: user}),
@@ -30,7 +29,6 @@ class BooksController < ApplicationController
       }
     end
   end
-
 
   def show
     @booking = Booking.new
